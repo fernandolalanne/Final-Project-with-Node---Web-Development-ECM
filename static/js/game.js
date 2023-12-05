@@ -65,7 +65,7 @@ $("#b1").click(function() {
   if(jugador == 1)
   {
     $("#b1").attr('src','img/x.png');
-    $("#b1").addClass('btn-outline-success');
+    $("#b1").addClass('btn-outline-danger');
     $("#b1").attr('disabled','disabled'); // no se pueden realizar mas acciones sobre la celda
     jugador = 2;
     console.log(jugador);

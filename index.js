@@ -12,19 +12,21 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 app.use("/static", express.static(path.join(__dirname, '/static')))
+app.use(express.json()); // Agregado
+app.use(express.urlencoded({ extended: true })); // Agregado
 
 app.get('/', (req, res) => {
     res.redirect(301, '/static/index.html')
 })
 
-app.get('/lancer', (req, res) => {
-    const dice1 = Math.floor(Math.random() * 6) + 1;
-    const dice2 = Math.floor(Math.random() * 6) + 1;
-    const dice3 = Math.floor(Math.random() * 6) + 1;
-  
-    const result = { dice1, dice2, dice3 };
-    res.json(result);
-  });
+
+app.post('/cellClick', (req, res) => {
+    const cellNumber = req.body.cell;
+    // Realiza acciones según el clic en la celda (actualizar el estado del juego, etc.)
+    console.log(`Celda clickeada: ${cellNumber}`);
+    res.send('Celda clickeada recibida en el servidor.');
+    // res.json(result);
+});
 
 
 app.use(function (req, res) {

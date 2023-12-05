@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/ray.png">
     <title>Tic Tac Toe</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
@@ -28,7 +27,7 @@
 
     <div class="panel-heading" align="center">
 
-      <h1>TIc-Tac-Toe</h1> 
+      <h1>Tic-Tac-Toe</h1> 
 
       <br>
 
@@ -66,37 +65,49 @@
         <tbody>
           <tr> <!--representa una fila en la tabla -->
               <th id="i1"> <!--celda con id i1 -->
-                <input id="b1" type="image" class="btn a" src="img/azul4.png"> <!--se rellena la celda con una imagen predeterminada -->
+                <input id="b1" type="image" class="btn a" src="img/azul4.png" onclick="cellClicked(1)"> <!--se rellena la celda con una imagen predeterminada -->
               </th>
               <th id="i2">
-                <input id="b2" type="image" class="btn a" src="img/azul4.png">
+                <input id="b2" type="image" class="btn a" src="img/azul4.png" onclick="cellClicked(2)">
               </th>
               <th id="i3">
-                <input id="b3" type="image" class="btn a" src="img/azul4.png">
+                <input id="b3" type="image" class="btn a" src="img/azul4.png" onclick="cellClicked(3)">
               </th>
           </tr>
           <tr>
               <th id="i4">
-                <input id="b4" type="image" class="btn a" src="img/azul4.png">
+                <input id="b4" type="image" class="btn a" src="img/azul4.png" onclick="cellClicked(4)">
               </th>
               <th id="i5">
-                <input id="b5" type="image" class="btn a" src="img/azul4.png">
+                <input id="b5" type="image" class="btn a" src="img/azul4.png" onclick="cellClicked(5)">
               </th>
               <th id="i6">
-                <input id="b6" type="image" class="btn a" src="img/azul4.png"> 
+                <input id="b6" type="image" class="btn a" src="img/azul4.png" onclick="cellClicked(6)"> 
               </th>
           </tr>
           <tr>
               <th id="i7">
-                <input id="b7" type="image" class="btn a" src="img/azul4.png">
+                <input id="b7" type="image" class="btn a" src="img/azul4.png" onclick="cellClicked(7)">
               </th>
               <th id="i8">
-                <input id="b8" type="image" class="btn a" src="img/azul4.png">
+                <input id="b8" type="image" class="btn a" src="img/azul4.png" onclick="cellClicked(8)">
               </th>
               <th id="i9">
-                <input id="b9" type="image" class="btn a" src="img/azul4.png">
+                <input id="b9" type="image" class="btn a" src="img/azul4.png" onclick="cellClicked(9)">
               </th>
           </tr>
+
+          <script>
+            function cellClicked(cellNumber) {
+              fetch('/cellClick', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ cell: cellNumber }),
+              });
+            }
+          </script>
         </tbody>
        </table>
       
