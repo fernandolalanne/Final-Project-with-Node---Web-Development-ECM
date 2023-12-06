@@ -11,6 +11,11 @@ const __dirname = path.dirname(__filename);
 const hostname = '127.0.0.1';
 const port = 3000;
 
+let estadoJuego = {
+    jugador: 1,
+    // Otros datos del juego...
+  };
+
 app.use("/static", express.static(path.join(__dirname, '/static')))
 app.use(express.json()); // Agregado
 app.use(express.urlencoded({ extended: true })); // Agregado
@@ -27,6 +32,16 @@ app.post('/cellClick', (req, res) => {
     res.send('Celda clickeada recibida en el servidor.');
     // res.json(result);
 });
+
+// En el servidor
+app.post('/cambiarJugador', (req, res) => {
+    // Cambiar el jugador en el estado del juego
+    estadoJuego.jugador = (estadoJuego.jugador === 1) ? 2 : 1; // (condición) ? valorSiCierto : valorSiFalso:
+    console.log(`Jugador cambiado a: ${estadoJuego.jugador}`);
+    // Enviar el nuevo valor del jugador como respuesta
+    res.send(estadoJuego.jugador.toString());
+});
+
 
 
 app.use(function (req, res) {
