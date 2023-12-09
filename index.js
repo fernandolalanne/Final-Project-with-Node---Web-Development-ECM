@@ -16,6 +16,11 @@ let estadoJuego = {
     // Otros datos del juego...
   };
 
+const imagenesJugadores = {
+    1: '/static/img/x.png',
+    2: '/static/img/o.png',
+    };
+
 app.use("/static", express.static(path.join(__dirname, '/static')))
 app.use(express.json()); // Agregado
 app.use(express.urlencoded({ extended: true })); // Agregado
@@ -36,10 +41,17 @@ app.post('/cellClick', (req, res) => {
 // En el servidor
 app.post('/cambiarJugador', (req, res) => {
     // Cambiar el jugador en el estado del juego
+    const imagenURL = imagenesJugadores[estadoJuego.jugador];
+    const estiloBoton = (estadoJuego.jugador === 1) ? 'btn-outline-danger' : 'btn-outline-light';
     estadoJuego.jugador = (estadoJuego.jugador === 1) ? 2 : 1; // (condición) ? valorSiCierto : valorSiFalso:
     console.log(`Jugador cambiado a: ${estadoJuego.jugador}`);
     // Enviar el nuevo valor del jugador como respuesta
-    res.send(estadoJuego.jugador.toString());
+    // res.send(estadoJuego.jugador.toString());
+    res.json({
+        jugador: estadoJuego.jugador,
+        imagenURL: imagenURL,
+        estiloBoton: estiloBoton,
+    });
 });
 
 

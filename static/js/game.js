@@ -116,12 +116,15 @@ if(jugador == 1) {
 
     $.post("/cambiarJugador", function(data) {
         console.log(data); // Mensaje del servidor
-        jugador = parseInt(data);
+        jugador = parseInt(data.jugador);
         console.log("Después de la solicitud al servidor - jugador:", jugador);
 
         // Lógica que depende de jugador actualizado
-        $("#b1").attr('src','img/x.png');
-        $("#b1").addClass('btn-outline-danger');
+        $("#b1").attr('src', data.imagenURL);
+        // $("#b1").attr('src','img/x.png');
+        // $("#b1").addClass('btn-outline-danger');
+        $("#b1").addClass(data.estiloBoton);
+
         $("#b1").attr('disabled','disabled'); // no se pueden realizar mas acciones sobre la celda
         fila1();
         col1();
@@ -134,12 +137,15 @@ else
 
   $.post("/cambiarJugador", function(data) {
       console.log(data); // Mensaje del servidor
-      jugador = parseInt(data);
+      jugador = parseInt(data.jugador);
       console.log("Después de la solicitud al servidor - jugador:", jugador);
 
       // Lógica que depende de jugador actualizado
-      $("#b1").attr('src','img/o.png');
-      $("#b1").addClass('btn-outline-light');
+      // $("#b1").attr('src','img/o.png');
+      $("#b1").attr('src', data.imagenURL);
+      // $("#b1").addClass('btn-outline-light');
+      $("#b1").addClass(data.estiloBoton);
+
       $("#b1").attr('disabled','disabled'); // no se pueden realizar mas acciones sobre la celda
       fila1();
       col1();
@@ -158,12 +164,14 @@ if(jugador == 1)
 
   $.post("/cambiarJugador", function(data) {
       console.log(data); // Mensaje del servidor
-      jugador = parseInt(data);
+      jugador = parseInt(data.jugador);
       console.log("Después de la solicitud al servidor - jugador:", jugador);
 
       // Lógica que depende de jugador actualizado
-      $("#b2").attr('src','img/x.png');
-      $("#b2").addClass('btn-outline-danger');
+      // $("#b2").attr('src','img/x.png');
+      $("#b2").attr('src', data.imagenURL);
+      // $("#b2").addClass('btn-outline-danger');
+      $("#b2").addClass(data.estiloBoton);
       $("#b2").attr('disabled','disabled');
       // jugador = 2;
       // console.log(jugador);
@@ -176,12 +184,14 @@ else
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b2").attr('src','img/o.png');
-    $("#b2").addClass('btn-outline-light');
+    //$("#b2").attr('src','img/o.png');
+    $("#b2").attr('src', data.imagenURL);
+    // $("#b2").addClass('btn-outline-light');
+    $("#b2").addClass(data.estiloBoton);
     $("#b2").attr('disabled','disabled');
     // jugador = 1;
     // console.log(jugador);
@@ -199,12 +209,14 @@ if(jugador == 1)
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b3").attr('src','img/x.png');
-    $("#b3").addClass('btn-outline-danger');
+    //$("#b3").attr('src','img/x.png');
+    $("#b3").attr('src', data.imagenURL);
+    // $("#b3").addClass('btn-outline-danger');
+    $("#b3").addClass(data.estiloBoton);
     $("#b3").attr('disabled','disabled');
     // jugador = 2;
     // console.log(jugador);
@@ -219,12 +231,14 @@ else
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b3").attr('src','img/o.png');
-    $("#b3").addClass('btn-outline-light');
+    // $("#b3").attr('src','img/o.png');
+    $("#b3").attr('src', data.imagenURL);
+    // $("#b3").addClass('btn-outline-light');
+    $("#b3").addClass(data.estiloBoton);
     $("#b3").attr('disabled','disabled');
     // jugador = 1;
     // console.log(jugador);
@@ -243,12 +257,14 @@ if(jugador == 1)
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b4").attr('src','img/x.png');
-    $("#b4").addClass('btn-outline-danger');
+    // $("#b4").attr('src','img/x.png');
+    $("#b4").attr('src', data.imagenURL);
+    // $("#b4").addClass('btn-outline-danger');
+    $("#b4").addClass(data.estiloBoton);
     $("#b4").attr('disabled','disabled');
     // jugador = 2;
     // console.log(jugador);
@@ -261,12 +277,14 @@ else
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b4").attr('src','img/o.png');
-    $("#b4").addClass('btn-outline-light');
+    // $("#b4").attr('src','img/o.png');
+    $("#b4").attr('src', data.imagenURL);
+    // $("#b4").addClass('btn-outline-light');
+    $("#b4").addClass(data.estiloBoton);
     $("#b4").attr('disabled','disabled');
     // jugador = 1;
     // console.log(jugador);
@@ -284,12 +302,14 @@ if(jugador == 1)
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b5").attr('src','img/x.png');
-    $("#b5").addClass('btn-outline-danger');
+    // $("#b5").attr('src','img/x.png');
+    $("#b5").attr('src', data.imagenURL);
+    // $("#b5").addClass('btn-outline-danger');
+    $("#b5").addClass(data.estiloBoton);
     $("#b5").attr('disabled','disabled');
     // jugador = 2;
     // console.log(jugador);
@@ -304,12 +324,14 @@ else
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b5").attr('src','img/o.png');
-    $("#b5").addClass('btn-outline-light');
+    // $("#b5").attr('src','img/o.png');
+    $("#b5").attr('src', data.imagenURL);
+    // $("#b5").addClass('btn-outline-light');
+    $("#b5").addClass(data.estiloBoton);
     $("#b5").attr('disabled','disabled');
     // jugador = 1;
     // console.log(jugador);
@@ -329,12 +351,14 @@ if(jugador == 1)
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b6").attr('src','img/x.png');
-    $("#b6").addClass('btn-outline-danger');
+    // $("#b6").attr('src','img/x.png');
+    $("#b6").attr('src', data.imagenURL);
+    // $("#b6").addClass('btn-outline-danger');
+    $("#b6").addClass(data.estiloBoton);
     $("#b6").attr('disabled','disabled');
     // jugador = 2;
     // console.log(jugador);
@@ -347,12 +371,15 @@ else
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b6").attr('src','img/o.png');
-    $("#b6").addClass('btn-outline-light');
+    // $("#b6").attr('src','img/o.png');
+    $("#b6").attr('src', data.imagenURL);
+    // $("#b6").addClass('btn-outline-light');
+    $("#b6").addClass(data.estiloBoton);
+
     $("#b6").attr('disabled','disabled');
     //jugador = 1;
     // console.log(jugador);
@@ -370,12 +397,15 @@ if(jugador == 1)
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b7").attr('src','img/x.png');
-    $("#b7").addClass('btn-outline-danger');
+    // $("#b7").attr('src','img/x.png');
+    $("#b7").attr('src', data.imagenURL);
+    // $("#b7").addClass('btn-outline-danger');
+    $("#b7").addClass(data.estiloBoton);
+
     $("#b7").attr('disabled','disabled');
     // jugador = 2;
     // console.log(jugador);
@@ -390,12 +420,15 @@ else
   
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b7").attr('src','img/o.png');
-    $("#b7").addClass('btn-outline-light');
+    // $("#b7").attr('src','img/o.png');
+    $("#b7").attr('src', data.imagenURL);
+    // $("#b7").addClass('btn-outline-light');
+    $("#b7").addClass(data.estiloBoton);
+
     $("#b7").attr('disabled','disabled');
     // jugador = 1;
     // console.log(jugador);
@@ -414,12 +447,15 @@ if(jugador == 1)
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b8").attr('src','img/x.png');
-    $("#b8").addClass('btn-outline-danger');
+    // $("#b8").attr('src','img/x.png');
+    $("#b8").attr('src', data.imagenURL);
+    // $("#b8").addClass('btn-outline-danger');
+    $("#b8").addClass(data.estiloBoton);
+
     $("#b8").attr('disabled','disabled');
     // jugador = 2;
     // console.log(jugador);
@@ -432,12 +468,15 @@ else
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b8").attr('src','img/o.png');
-    $("#b8").addClass('btn-outline-light');
+    // $("#b8").attr('src','img/o.png');
+    $("#b8").attr('src', data.imagenURL);
+    // $("#b8").addClass('btn-outline-light');
+    $("#b8").addClass(data.estiloBoton);
+
     $("#b8").attr('disabled','disabled');
     // jugador = 1;
     // console.log(jugador);
@@ -455,12 +494,15 @@ if(jugador == 1)
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugadr);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b9").attr('src','img/x.png');
-    $("#b9").addClass('btn-outline-danger');
+    // $("#b9").attr('src','img/x.png');
+    $("#b9").attr('src', data.imagenURL);
+    // $("#b9").addClass('btn-outline-danger');
+    $("#b9").addClass(data.estiloBoton);
+
     $("#b9").attr('disabled','disabled');
     // jugador = 2;
     // console.log(jugador);
@@ -474,12 +516,15 @@ else
 {
   $.post("/cambiarJugador", function(data) {
     console.log(data); // Mensaje del servidor
-    jugador = parseInt(data);
+    jugador = parseInt(data.jugador);
     console.log("Después de la solicitud al servidor - jugador:", jugador);
 
     // Lógica que depende de jugador actualizado
-    $("#b9").attr('src','img/o.png');
-    $("#b9").addClass('btn-outline-light');
+    // $("#b9").attr('src','img/o.png');
+    $("#b9").attr('src', data.imagenURL);
+    // $("#b9").addClass('btn-outline-light');
+    $("#b9").addClass(data.estiloBoton);
+
     $("#b9").attr('disabled','disabled');
     // jugador = 1;
     // console.log(jugador);
