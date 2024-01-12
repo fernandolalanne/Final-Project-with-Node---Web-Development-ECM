@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
     <link rel="stylesheet" href="css/game.css">
     <script src="js/game.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
     
    
     
@@ -51,6 +54,8 @@
           <input type="text" style="width: 5%; text-align:center;" name="scorej2" id="scorej2" value="0" readonly>
       </div>
 
+      <div id="jugadorActual">Current player: <span id="jugadorNumero">1</span></div>
+
       <div id="game-messages">
           <div id="mensaje"></div>
           <div id="mensaje2"></div>
@@ -65,7 +70,7 @@
         <tbody>
           <tr> <!--representa una fila en la tabla -->
               <th id="i1"> <!--celda con id i1 -->
-                <input id="b1" type="image" class="btn a" src="img/azul4.png" onclick="cellClicked(1)"> <!--se rellena la celda con una imagen predeterminada -->
+                <input id="b1" type="image"  class="btn a btn-{{ jugador === 1 ? 'x' : 'o' }}" src="img/azul4.png" onclick="cellClicked(1)", > <!--se rellena la celda con una imagen predeterminada -->
               </th>
               <th id="i2">
                 <input id="b2" type="image" class="btn a" src="img/azul4.png" onclick="cellClicked(2)">

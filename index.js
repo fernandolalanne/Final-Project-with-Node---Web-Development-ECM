@@ -43,16 +43,36 @@ app.post('/cambiarJugador', (req, res) => {
     // Cambiar el jugador en el estado del juego
     const imagenURL = imagenesJugadores[estadoJuego.jugador];
     const estiloBoton = (estadoJuego.jugador === 1) ? 'btn-outline-danger' : 'btn-outline-light';
+    const jug = estadoJuego.jugador;
     estadoJuego.jugador = (estadoJuego.jugador === 1) ? 2 : 1; // (condición) ? valorSiCierto : valorSiFalso:
     console.log(`Jugador cambiado a: ${estadoJuego.jugador}`);
     // Enviar el nuevo valor del jugador como respuesta
     // res.send(estadoJuego.jugador.toString());
     res.json({
+        jugador_anterior: jug,
         jugador: estadoJuego.jugador,
         imagenURL: imagenURL,
         estiloBoton: estiloBoton,
     });
 });
+
+// app.post('/changePlayer', (req, res) => {
+//     // Change the player in the game state
+//     const imageURL = playerImages[gameState.player];
+//     const buttonStyle = (gameState.player === 1) ? 'btn-outline-danger' : 'btn-outline-light';
+//     const prevPlayer = gameState.player;
+//     gameState.player = (gameState.player === 1) ? 2 : 1; // (condition) ? valueIfTrue : valueIfFalse:
+//     console.log(`Player changed to: ${gameState.player}`);
+//     // Send the new player value as a response
+//     // res.send(gameState.player.toString());
+//     res.json({
+//         previous_player: prevPlayer,
+//         player: gameState.player,
+//         imageURL: imageURL,
+//         buttonStyle: buttonStyle,
+//     });
+// });
+
 
 
 

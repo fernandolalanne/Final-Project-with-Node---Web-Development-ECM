@@ -389,4 +389,34 @@ h1{
 	  bottom: 100%;
 	}
   }
+
+  .btn-x {
+	/* Estilos para el jugador X */
+	background-color: red;
+  }
+  
+  .btn-o {
+	/* Estilos para el jugador O */
+	background-color: blue;
+  }
+  #jugadorActual {
+    font-family: 'Roboto Slab', serif; /* Utilizar la fuente Roboto Slab */
+    font-size: 24px; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+    color: #0056b3; /* Color azul para el texto */
+    background-color: #e6f2ff; /* Fondo claro */
+    border: 2px solid #0056b3; /* Borde azul */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px auto; /* Centrar el div y añadir espaciado externo */
+    text-align: center; /* Alinear el texto al centro */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: all 0.3s ease; /* Transición suave para efectos de hover */
+}
+
+#jugadorActual:hover {
+    color: #ff6600; /* Cambiar el color al pasar el mouse */
+    background-color: #fff0e6; /* Fondo más claro al pasar el mouse */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el mouse */
+}
+
   
